@@ -1,0 +1,2 @@
+Discrete mathematics is the part of mathematics devoted to the study of discrete objects. 
+Discrete mathematics forms the mathematical foundation of computer and information science.
