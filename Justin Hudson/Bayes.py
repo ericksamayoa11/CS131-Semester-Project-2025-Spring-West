@@ -1,14 +1,16 @@
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk.stem import PorterStemmer
 
-nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 stop_words = set(stopwords.words('english'))
 
 positive = []
+positive_stemmed = []
 negative = []
+negative_stemmed = []
 
 with open('positive.txt', 'r') as file:
     for line in file:
@@ -22,27 +24,38 @@ with open('negative.txt', 'r') as file:
         words = [word for word in words if word.isalnum() and word not in stop_words]
         negative.append(words)
 
+stemmer = PorterStemmer()
+
+for review in positive:
+    for word in review:
+        positive_stemmed.append(stemmer.stem(word))
+
+for review in negative:
+    for word in review:
+        negative_stemmed.append(stemmer.stem(word))
+
 while True:
     user_input = input("\nEnter word: ")
+
+    user_input_stemmed = stemmer.stem(user_input)
+
     # Calculate P("input") 
     count_input_positive = 0
     count_total_positive = 0
-    for sentence in positive:
-        for word in sentence:
-            if word == user_input:
-                count_input_positive += 1
-                count_total_positive += 1
-            else:
-                count_total_positive += 1
+    for word in positive_stemmed:
+        if word == user_input_stemmed:
+            count_input_positive += 1
+            count_total_positive += 1
+        else:
+            count_total_positive += 1
     count_input_negative = 0
     count_total_negative = 0
-    for sentence in negative:
-        for word in sentence:
-            if word == user_input:
-                count_input_negative += 1
-                count_total_negative += 1
-            else:
-                count_total_negative += 1
+    for word in negative_stemmed:
+        if word == user_input_stemmed:
+            count_input_negative += 1
+            count_total_negative += 1
+        else:
+            count_total_negative += 1
     p_input = (count_input_positive + count_input_negative) / (count_total_positive + count_total_negative)
     if p_input != 0:
         break
