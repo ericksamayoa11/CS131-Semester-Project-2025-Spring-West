@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 
 # Download NLTK resources
-nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 # Open and read .TXT file
@@ -19,12 +18,12 @@ words = word_tokenize(text.lower())
 words = [word for word in words if word.isalnum() and word not in stop_words]
 
 # Define the window size for co-occurrence
-window_size = 1
+context_window = 1
 
 # Create a list of co-occurring word pairs
 co_occurrences = defaultdict(Counter)
 for i, word in enumerate(words):
-    for j in range(max(0, i - window_size), min(len(words), i + window_size + 1)):
+    for j in range(max(0, i - context_window), min(len(words), i + context_window + 1)):
         if i != j:
             co_occurrences[word][words[j]] += 1
 
