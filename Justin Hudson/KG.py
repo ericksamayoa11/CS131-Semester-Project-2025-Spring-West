@@ -5,9 +5,9 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
 data = {
-    'source': ["cats", "dogs", "cats","mice", "dogs","mice", "cats", "dogs", "mice"],
-    'target': ["mice", "water", "water", "water", "cats", "cats", "animals", "animals", "animals"],
-    'relation': ["eat", "drink", "drink", "drink", "like", "hate", "are", "are", "are"],
+    'subject': ["cats", "dogs", "cats","mice", "dogs","mice", "cats", "dogs", "mice"],
+    'verb': ["eat", "drink", "drink", "drink", "like", "hate", "are", "are", "are"],
+    'object': ["mice", "water", "water", "water", "cats", "cats", "animals", "animals", "animals"],
 }
 
 dataframe = pd.DataFrame(data)
@@ -15,9 +15,9 @@ dataframe = pd.DataFrame(data)
 G = nx.MultiDiGraph()
 
 for _, row in dataframe.iterrows():
-    source = row['source']
-    target = row['target']
-    relation = row['relation']
+    source = row['subject']
+    target = row['object']
+    relation = row['verb']
 
     G.add_node(source)
     G.add_node(target)
