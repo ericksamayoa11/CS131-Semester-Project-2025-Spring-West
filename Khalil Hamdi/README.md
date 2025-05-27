@@ -1,9 +1,8 @@
 This is the project submission of Khalil Hamdi
 
-YouTube video link: [Link](https://www.youtube.com/watch?v=RBsWGQMwGFI)
+YouTube video link: [https://www.youtube.com/watch?v=RBsWGQMwGF](https://www.youtube.com/watch?v=RBsWGQMwGFI)
 
 Project description:
-Description:
 This project explores how artificial intelligence is transforming robotics in 2025, from factory floors to humanoid helpers. I cover the evolution of AI in robotics, key technical breakthroughs like reinforcement learning and multimodal models, and real-world deployments by companies like NVIDIA and Tesla. You'll also hear about the major challenges—like energy use and safety—and the ethical questions shaping the future.
 
 I created a 6-minute recorded presentation that’s fast-paced, informative, and (hopefully) fun to watch. Whether you're into machine learning, hardware, or just curious about where robots are headed, this overview should give you a clear picture of what’s next in this field.
