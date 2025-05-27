@@ -5,4 +5,4 @@ My presentation is on the subject of Natural Language Processing (NLP), the use 
 ### Youtube Video
 [![Watch the video](https://img.youtube.com/vi/CixG_yr5UVM/0.jpg)](https://www.youtube.com/watch?v=CixG_yr5UVM)
 
-Click the image above or [watch the full presentation on YouTube](https://www.youtube.com/watch?v=CixG_yr5UVM).
+Click the image above or [watch on YouTube](https://www.youtube.com/watch?v=CixG_yr5UVM).
